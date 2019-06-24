@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf allure-results/ allure-report/",
-    "setup": "./setup_selenoid.sh",
+    "setup": "./selenoid_setup.sh",
     "test": "./node_modules/.bin/wdio wdio.conf.js",
     "report": "allure generate allure-results && allure open"
   },
