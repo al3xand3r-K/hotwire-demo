@@ -1,9 +1,9 @@
 ## Stack
 
-- [webdriver.io]()
-- [chai]()
-- [allure]()
-- [selenoid]()
+- [webdriver.io](https://webdriver.io/)
+- [chai](http://allure.qatools.ru/)
+- [allure](https://devhints.io/chai)
+- [selenoid](https://aerokube.com/selenoid/latest/)
 
 ## Running Tests
 
