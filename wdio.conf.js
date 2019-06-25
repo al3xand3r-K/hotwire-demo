@@ -37,8 +37,8 @@ exports.config = {
         './test/**/*.test.js'
     ],
     suites: {
-        acceptance: [
-            '',
+        dev: [
+            './test/happy-path.test.js',
         ],
         smoke: [
             '',
@@ -112,10 +112,10 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://webdriver.io',
+    baseUrl: 'https://hotwire.com',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 8000,
+    waitforTimeout: 12000,
     //
     // Default timeout in milliseconds for request
     // if Selenium Grid doesn't send response
@@ -156,7 +156,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 8000,
+        timeout: 6000000,
         compilers: ['js:@babel/register'],
     },
     //
@@ -195,9 +195,9 @@ exports.config = {
         
         // timeouts
         browser.setTimeout({
-            'pageLoad': 10000,
-            'script': 30000,
-            'implicit': 8000,
+            'pageLoad': 15000,
+            'script': 8000,
+            'implicit': 20000,
         });
 
         browser.maximizeWindow();
