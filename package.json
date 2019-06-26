@@ -7,7 +7,9 @@
     "clean": "rm -rf allure-results/ allure-report/",
     "setup": "./selenoid_setup.sh",
     "test": "./node_modules/.bin/wdio wdio.conf.js",
-    "report": "allure generate allure-results && allure open"
+    "report": "allure generate allure-results && allure open",
+    "test-acceptance": "./node_modules/.bin/wdio wdio.conf.js --suite acceptance",
+    "test-smoke": "./node_modules/.bin/wdio wdio.conf.js --suite smoke"
   },
   "author": "",
   "license": "ISC",
