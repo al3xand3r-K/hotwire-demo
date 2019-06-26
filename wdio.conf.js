@@ -37,11 +37,12 @@ exports.config = {
         './test/**/*.test.js'
     ],
     suites: {
-        dev: [
+        acceptance: [
             './test/happy-path.test.js',
         ],
         smoke: [
-            '',
+            './test/search_main-page/hotels-search.test.js',
+            './test/search_main-page/search-criteria-transferability.test.js',
         ],
     },
     // Patterns to exclude.
@@ -119,7 +120,7 @@ exports.config = {
     //
     // Default timeout in milliseconds for request
     // if Selenium Grid doesn't send response
-    connectionRetryTimeout: 30000,
+    connectionRetryTimeout: 15000,
     //
     // Default request retries count
     connectionRetryCount: 1,
@@ -195,12 +196,10 @@ exports.config = {
         
         // timeouts
         browser.setTimeout({
-            'pageLoad': 15000,
+            'pageLoad': 12000,
             'script': 8000,
-            'implicit': 20000,
+            'implicit': 8000,
         });
-
-        browser.maximizeWindow();
         
         // chai
         const chai = require('chai');
@@ -224,8 +223,9 @@ exports.config = {
      * Function to be executed before a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
      * @param {Object} test test details
      */
-    // beforeTest: function (test) {
-    // },
+    beforeTest: function (test) {
+        browser.maximizeWindow();
+    },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
@@ -243,9 +243,10 @@ exports.config = {
      * @param {Object} test test details
      */
     afterTest: function(test) {
-        if (test.error !== undefined) {
+        if (test.error !== undefined)
             browser.takeScreenshot();
-        }
+
+        browser.reloadSession();
     },
     /**
      * Hook that gets executed after the suite has ended
