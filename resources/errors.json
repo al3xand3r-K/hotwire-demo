@@ -1,0 +1,6 @@
+{
+  "errors": {
+    "bookingPeriodExceeded": "User entered a date in the Check-out field that is more than 30 days from the Check-in.",
+    "destinationIsEmpty": "Whoops! You must enter a location to complete your search. Please select one of the options that displays from the drop down menu."
+  }
+}
