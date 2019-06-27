@@ -41,8 +41,9 @@ exports.config = {
             './test/happy-path.test.js',
         ],
         smoke: [
-            './test/search_main-page/hotels-search.test.js',
+            './test/search_main-page/search-widget-home-page.test.js',
             './test/search_main-page/search-criteria-transferability.test.js',
+            './test/search_main-page/search-page.test.js',
         ],
     },
     // Patterns to exclude.
