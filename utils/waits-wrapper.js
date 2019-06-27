@@ -2,10 +2,11 @@ module.exports = {
   /**
    * 
    * @param {element locator} element 
-   * @param {string} errMsg - defaulted to a pre-built string
+   * @param {string} elementName - used for building a more informative err msg; default is 'element'
    * @param {number} timeout - measured in ms; 8000 is default
    */
-  shouldBeDisplayed: function(element, errMsg = 'failed to wait for element to become visible', timeout = 8000) {
+  shouldBeDisplayed: function(element, elementName = 'element', timeout = 8000) {
+    const errMsg = `failed to wait for ${elementName} to become visible`
     browser.waitUntil(() => { return element.isDisplayed() == true }, timeout, errMsg);
   },
 
