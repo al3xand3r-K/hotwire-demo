@@ -31,9 +31,13 @@ module.exports = {
     // -> increase month by 1 and recalc current day
     let daysInCurrentMonth = getDaysInMonth( d.getMonth() + 1, d.getFullYear() );
 
+    // if true -> `day` equals to the number of days that exceed current month's "maxDays" 
+    // else -> increase current `day` by `n`
     if (daysInCurrentMonth - day < n) {
       day = n - (daysInCurrentMonth - day)
       month += 1
+    } else {
+      day += n
     }
     
     // input format with '0' is required to get validated by form input
